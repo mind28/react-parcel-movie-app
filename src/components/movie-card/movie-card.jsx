@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Button, Card, Container} from 'react-bootstrap';
 
 export class MovieCard extends React.Component {
   render() {
@@ -13,15 +14,25 @@ export class MovieCard extends React.Component {
 
 
     return (
-    <div className="movie-card" onClick={()=>
-        onMovieClick(movie)}> {movie.Title} </div>
+      <Card>
+        <Card.Img variant="top" src={movie.ImagePath}/>
+        <Card.Body>
+          <Card.Title className="titles text-center">{movie.Title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Container className="text-center">
+          <Button className="custom-btn" onClick={()=> onMovieClick(movie)} variant="link">Open</Button>
+          </Container>
+        </Card.Body>
+      </Card>
+    
     )}
 }
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string,
     Description: PropTypes.string,
-  }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  }),
+  onMovieClick: PropTypes.func
 };

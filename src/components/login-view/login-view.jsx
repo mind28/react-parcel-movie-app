@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import { Form, Container, Row, Col, Button } from 'react-bootstrap';
 
 export function LoginView(props){
     const [username, setUsername] = useState('');
@@ -25,23 +25,34 @@ export function LoginView(props){
     };
 
     return (
-        <form>
-        <label>
-            Username: 
-            <input type="text" value={username}
-            onChange={e=>
-                setUsername(e.target.value)}/>
-        </label>
-        <label>
-            Password: 
-            <input type="password" value={password}
-            onChange={e=>
-                setPassword(e.target.value)}/>
-        </label>
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>
-        <button type="submit" onClick={handleRegister}>Register here</button>
-    </form>
+    <Container>
+        <Row className='justify-content-md-center'>
+            <Col md={6}>
+   
+                 <h1>Sign in to your account</h1>
+                    <Form className="register-form">
+                <Form.Group className="mb-3" controlId="formEmail">
+                     <Form.Label>Username: </Form.Label>
+                      <Form.Control type="text" placeholder="Enter a username" value={username}
+                       onChange={e=>
+                           setUsername(e.target.value)} />
+                 </Form.Group>
+                <Form.Group className="mb-3" controlId="formPassword">
+                     <Form.Label>Password</Form.Label>
+                         <Form.Control type="password" placeholder="Your password" value={password}
+                          onChange={e=>
+                         setPassword(e.target.value)}/>
+                 </Form.Group>
+            <p>Already have an account?</p>
+            <Button variant="primary" className="custom-btn" type="submit" onClick={handleSubmit}>
+                Sign in
+            </Button><br></br>
+                         </Form>
+             </Col>
+         </Row>
+      </Container>
+
     )
 }
 LoginView.propTypes={

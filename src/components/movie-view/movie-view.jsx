@@ -1,85 +1,115 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Button, Card, Container, Col} from 'react-bootstrap';
 
 export class MovieView extends React.Component {
 
+  //implementing a show more and show less button
 
   render() {
       const {movie, onBackClick }=this.props;
-      
      
       return (
+ 
+        <Card>
+        <Container className="text-center p-3">
+        <Card.Img className="movie-poster" variant="top" src={movie.ImagePath}/>
+        </Container>
 
-          <div className="movie-view">
-            <div className="movie-poster">
-                <img src={movie.ImagePath}/>
-                </div>
-                <div className="movie-title">
-                    <span className="label">Title:</span>
-                    <span className="label">{movie.Title}</span>
-                    </div>  
-                <div className="movie-description">
-                    <span className="label">Description:</span>
-                    <span className="label">{movie.Description}</span>
-                    </div> 
-                    <div className="movie-genre">
-                    <span className="label">Genre:</span>
-                    <span className="label">{movie.Genre.Name}</span>
-                    </div> 
-                    <div className="movie-release">
-                    <span className="label">Release Year:</span>
-                    <span className="label">{movie.releaseYear}</span>
-                    </div> 
-                    <div className="movie-director">
-                    <span className="label">Director:</span>
-                    <span className="label">{movie.Director.Name}</span>
-                    </div> 
-                    <div className="movie-director-bio">
-                    <span className="label">Director's bio:</span>
-                    <span className="label">{movie.Director.Bio}</span>
-                    </div> 
-                    <div className="movie-director-birth">
-                    <span className="label">Director's birth date:</span>
-                    <span className="label">{movie.Director.Birth}</span>
-                    </div> 
-                    { (movie.Director.Death) &&
-                        <div className="movie-director-death">
-                        <span className="label">Director's death date:</span>
-                        <span className="label">{movie.Director.Death}</span>
-                        </div> 
-                      }  
-                    <div className="movie-actor">
-                    <span className="label">Main Actor:</span>
-                    <span className="label">{movie.Actors[0].Name}</span>
-                    </div> 
-                    <div className="movie-actor-bio">
-                    <span className="label">Main Actor's bio:</span>
-                    <span className="label">{movie.Actors[0].Bio}</span>
-                    </div> 
-                    <div className="movie-actor-birth">
-                    <span className="label">Main Actor's birth date:</span>
-                    <span className="label">{movie.Actors[0].Birth}</span>
-                    </div> 
-                    { (movie.Actors[0].Death) &&
-                        <div className="movie-actor-death">
-                        <span className="label">Main Actor's death date:</span>
-                        <span className="label">{movie.Actors[0].Death}</span>
-                        </div>
-                      } 
-                    
-                    <button onClick={()=>{onBackClick(null);}}>Back</button>
-          </div>
+       <Card.Body>
+
+       <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Title:  </Card.Text>
+       <span className="movie-title titles ml-3 ">{movie.Title}</span>
+      </Col>
+      
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Description:  </Card.Text>
+       <span className="movie-description card-text ml-3 ">{movie.Description}</span>
+      </Col>
+
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Genre:  </Card.Text>
+       <span className="movie-genre titles ml-3 ">{movie.Genre.Name}</span>
+      </Col>
+
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Release Year:  </Card.Text>
+       <span className="movie-release titles ml-3 ">{movie.releaseYear}</span>
+      </Col>
+
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Director:  </Card.Text>
+       <span className="movie-director titles ml-3 ">{movie.Director.Name}</span>
+      </Col>
+
+
+      <Container className="extra-info">
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Bio:  </Card.Text>
+       <span className="movie-director-bio card-text  ml-3 ">{movie.Director.Bio}</span>
+      </Col>
+
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Born:  </Card.Text>
+       <span className="movie-director-birth titles ml-3 ">{movie.Director.Birth}</span>
+      </Col>
+
+      { (movie.Director.Death) &&
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Death:  </Card.Text>
+       <span className="movie-director-death titles ml-3 ">{movie.Director.Death}</span>
+      </Col>}
+    </Container>
+
+          
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Main Actor:  </Card.Text>
+       <span className="movie-actor titles ml-3 ">{movie.Actors[0].Name}</span>
+      </Col>
+
+
+      <Container className="extra-info">
+
+       <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Bio:  </Card.Text>
+       <span className="movie-actor-bio card-text  ml-3 ">{movie.Actors[0].Bio}</span>
+      </Col>
+
+      <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Born:  </Card.Text>
+       <span className="movie-actor-name titles ml-3 ">{movie.Actors[0].Birth}</span>
+      </Col>
+
+      { (movie.Actors[0].Death) &&
+       <Col className="d-sm-flex justify-content-between justify-content-lg-start">
+       <Card.Text className="label titles">Died:  </Card.Text>
+       <span className="movie-director titles ml-3 ">{movie.Actors[0].Death}</span>
+      </Col>
+      }
+        </Container>         
+     
+    
+              
+          <Container className="text-center p-2">
+         <Button variant="primary" className="custom-btn" onClick={()=>{onBackClick(null);}}>Go Back</Button>
+     </Container>
+     </Card.Body>
+  </Card>
+
+          
       )
   }}
 
-MovieView.propTypes={
+
+  MovieView.propTypes={
   movie: PropTypes.shape({
     Title: PropTypes.string,
 
     Genre: PropTypes.shape({
       Name: PropTypes.string,
       Description: PropTypes.string,
-    }).isRequired,
+    }),
 
     Featured: PropTypes.bool,
 
@@ -104,5 +134,5 @@ MovieView.propTypes={
 
     ImagePath: PropTypes.string,
   }),
-  onMovieClick: PropTypes.func
+  onBackClick: PropTypes.func
 }
