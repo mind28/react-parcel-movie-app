@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  height: 450px;
+  margin: 5px;
+  position: relative;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+  box-shadow: 10px 10px 5px gray;
+}
+
+.title-text {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.text {
+  color: #000;
+}
+
+/*# sourceMappingURL=index.e3f97e84.css.map */
