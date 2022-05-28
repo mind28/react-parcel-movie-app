@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './movie-view'
 import { Button, Card, Container, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -106,7 +107,7 @@ export class MovieView extends React.Component {
     let isFav = userFav.includes(movieId);
 
     return (
-      <Card>
+      <Card className="container ">
         <Container className="text-left pt-1 pb-1 card-custom">
           <Button
             variant=""
@@ -118,13 +119,13 @@ export class MovieView extends React.Component {
             Back
           </Button>
         </Container>
-        <Container className="text-center card-custom">
+       
           <Card.Img
             style={{ width: '100%' }}
             variant="top"
             src={movie.ImagePath}
           />
-        </Container>
+       
 
         <Card.Body>
           <Col className="d-sm-flex justify-content-between justify-content-xl-start mb-3">
@@ -172,7 +173,7 @@ export class MovieView extends React.Component {
             
           </Col>
 
-          {movie.Actors[0].Name && (
+          {movie.Actors[0] && (
             <Col className="d-sm-flex justify-content-between justify-content-xl-start mt-2 mb-3">
               <Card.Text className="label titles"><Link
                 className="titles movie-actor h3"

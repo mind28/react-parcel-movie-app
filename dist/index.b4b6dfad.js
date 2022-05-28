@@ -22721,7 +22721,7 @@ class MainView extends _reactDefault.default.Component {
         const { movies , user: user1  } = this.state;
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
             children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.Navbar, {
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.NavBar, {
                     className: "mb-3",
                     user: user1
                 }, void 0, false, {
@@ -38945,6 +38945,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _movieView = require("./movie-view");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
@@ -39031,6 +39032,7 @@ class MovieView extends _reactDefault.default.Component {
         let userFav = this.state.favoriteMovies;
         let isFav = userFav.includes(movieId);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
+            className: "container ",
             children: [
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                     className: "text-left pt-1 pb-1 card-custom",
@@ -39043,31 +39045,24 @@ class MovieView extends _reactDefault.default.Component {
                         children: "Back"
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 111,
+                        lineNumber: 112,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 110,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-                    className: "text-center card-custom",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Img, {
-                        style: {
-                            width: '100%'
-                        },
-                        variant: "top",
-                        src: movie.ImagePath
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 122,
-                        columnNumber: 11
-                    }, this)
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Img, {
+                    style: {
+                        width: '100%'
+                    },
+                    variant: "top",
+                    src: movie.ImagePath
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 121,
-                    columnNumber: 9
+                    lineNumber: 123,
+                    columnNumber: 11
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
                     children: [
@@ -39081,19 +39076,19 @@ class MovieView extends _reactDefault.default.Component {
                                         children: movie.Title
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 131,
+                                        lineNumber: 132,
                                         columnNumber: 52
                                     }, this),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 131,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 130,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
@@ -39106,22 +39101,22 @@ class MovieView extends _reactDefault.default.Component {
                                     children: movie.Genre.Name
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 59
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 134,
+                                lineNumber: 135,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 133,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("hr", {}, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 142,
+                            lineNumber: 143,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
@@ -39134,19 +39129,19 @@ class MovieView extends _reactDefault.default.Component {
                                         children: movie.Description
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 145,
+                                        lineNumber: 146,
                                         columnNumber: 49
                                     }, this),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 145,
+                                lineNumber: 146,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 144,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
@@ -39159,19 +39154,19 @@ class MovieView extends _reactDefault.default.Component {
                                         children: "Directed by:"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 152,
+                                        lineNumber: 153,
                                         columnNumber: 49
                                     }, this),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 152,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 151,
+                            lineNumber: 152,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
@@ -39185,19 +39180,19 @@ class MovieView extends _reactDefault.default.Component {
                                         children: movie.Director.Name
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 159,
+                                        lineNumber: 160,
                                         columnNumber: 50
                                     }, this),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 159,
+                                lineNumber: 160,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 158,
+                            lineNumber: 159,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
@@ -39210,22 +39205,22 @@ class MovieView extends _reactDefault.default.Component {
                                         children: "Starring:"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 169,
+                                        lineNumber: 170,
                                         columnNumber: 49
                                     }, this),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 169,
+                                lineNumber: 170,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 168,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, this),
-                        movie.Actors[0].Name && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                        movie.Actors[0] && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                             className: "d-sm-flex justify-content-between justify-content-xl-start mt-2 mb-3",
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                                 className: "label titles",
@@ -39236,19 +39231,19 @@ class MovieView extends _reactDefault.default.Component {
                                         children: movie.Actors[0].Name
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 177,
+                                        lineNumber: 178,
                                         columnNumber: 51
                                     }, this),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 177,
+                                lineNumber: 178,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 176,
+                            lineNumber: 177,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
@@ -39261,7 +39256,7 @@ class MovieView extends _reactDefault.default.Component {
                                     children: "Add to favorites"
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 188,
+                                    lineNumber: 189,
                                     columnNumber: 15
                                 }, this),
                                 isFav && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
@@ -39271,25 +39266,25 @@ class MovieView extends _reactDefault.default.Component {
                                     children: "Remove from favorites"
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 197,
+                                    lineNumber: 198,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 186,
+                            lineNumber: 187,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 129,
+                    lineNumber: 130,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 109,
+            lineNumber: 110,
             columnNumber: 7
         }, this);
     }
@@ -39327,7 +39322,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9tpci":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./movie-view":"ggaUx"}],"9tpci":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39736,18 +39731,18 @@ class ProfileView extends _reactDefault.default.Component {
             birthday: value
         });
     }
-    removeFav() {
+    removeFav(movie) {
         {
             const user = localStorage.getItem("user");
             const token = localStorage.getItem("token");
-            const id = this.props.movie._id;
+            const id = movie._id;
             _axiosDefault.default.delete(`https://movie-app-2828.herokuapp.com/users/${user}/favoriteMovies/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             }, {}).then((response)=>{
                 console.log(response);
-                alert(`${this.props.movie.Title} has been deleted from your list of favorites`);
+                alert(`${movie.Title} has been deleted from your list of favorites`);
                 window.open(`/movies/${id}`, "_self");
             }).catch((e)=>console.log(e)
             );
@@ -40217,7 +40212,7 @@ class ProfileView extends _reactDefault.default.Component {
                                                             width: "80%"
                                                         },
                                                         variant: "outline-danger",
-                                                        onClick: this.removeFav,
+                                                        onClick: this.removeFav(movie),
                                                         children: "Remove from List"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-veiw/profile-view.jsx",
@@ -40276,14 +40271,14 @@ $parcel$ReactRefreshHelpers$8284.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
+parcelHelpers.export(exports, "NavBar", ()=>NavBar
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
-function Navbar() {
+function NavBar() {
     let user = localStorage.getItem("user");
     const onLoggedOut = ()=>{
         localStorage.clear();
@@ -40355,9 +40350,9 @@ function Navbar() {
         columnNumber: 5
     }, this);
 }
-_c = _reactBootstrap.Navbar;
+_c = NavBar;
 var _c;
-$RefreshReg$(_c, "Navbar");
+$RefreshReg$(_c, "NavBar");
 
   $parcel$ReactRefreshHelpers$8284.postlude(module);
 } finally {

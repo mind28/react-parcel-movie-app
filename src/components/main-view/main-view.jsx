@@ -8,7 +8,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import { ProfileView } from "../profile-veiw/profile-view";
-import { Navbar } from "../navbar-view/navbar-view";
+import { NavBar } from "../navbar-view/navbar-view";
 import { ActorView } from "../actor-view/actor-view";
 import { RegistrationView } from "../registration-view/registration-view";
 
@@ -70,7 +70,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Navbar 
+        <NavBar 
           className='mb-3'
           user={user} />
 

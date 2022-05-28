@@ -125,11 +125,11 @@ export class ProfileView extends React.Component {
       birthday: value,
     });
   }
-  removeFav() {
+  removeFav(movie) {
     {
       const user = localStorage.getItem("user");
       const token = localStorage.getItem("token");
-      const id = this.props.movie._id;
+      const id = movie._id;
 
       axios
         .delete(
@@ -141,7 +141,7 @@ export class ProfileView extends React.Component {
         .then((response) => {
           console.log(response);
           alert(
-            `${this.props.movie.Title} has been deleted from your list of favorites`
+            `${movie.Title} has been deleted from your list of favorites`
           );
           window.open(`/movies/${id}`, "_self");
         })
@@ -370,7 +370,7 @@ export class ProfileView extends React.Component {
                               className="m-1"
                               style={{ width: "80%" }}
                               variant="outline-danger"
-                              onClick={this.removeFav}
+                              onClick={this.removeFav(movie)}
                             >
                               Remove from List
                             </Button>
