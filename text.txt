@@ -1,0 +1,3 @@
+ 
+
+      <Card.Img src={movie.ImagePath} alt="Avatar" class="image">
