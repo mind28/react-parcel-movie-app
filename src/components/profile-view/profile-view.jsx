@@ -125,28 +125,24 @@ export class ProfileView extends React.Component {
       birthday: value,
     });
   }
-  removeFav(movie) {
-    {
-      const user = localStorage.getItem("user");
-      const token = localStorage.getItem("token");
-      const id = movie._id;
+  removeFav() {
+    const user = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+    const id = this.state.favoriteMovies;
 
-      axios
-        .delete(
-          `https://movie-app-2828.herokuapp.com/users/${user}/favoriteMovies/${id}`,
+    axios
+      .delete(
+        `https://movie-app-2828.herokuapp.com/users/${user}/favoriteMovies/${id}`,
 
-          { headers: { Authorization: `Bearer ${token}` } },
-          {}
-        )
-        .then((response) => {
-          console.log(response);
-          alert(
-            `${movie.Title} has been deleted from your list of favorites`
-          );
-          window.open(`/movies/${id}`, "_self");
-        })
-        .catch((e) => console.log(e));
-    }
+        { headers: { Authorization: `Bearer ${token}` } },
+        {}
+      )
+      .then((response) => {
+        console.log(response);
+        alert("Movie deleted from favorites!");
+        window.open(`/movies/${id}`, "_self");
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -370,7 +366,7 @@ export class ProfileView extends React.Component {
                               className="m-1"
                               style={{ width: "80%" }}
                               variant="outline-danger"
-                              onClick={this.removeFav(movie)}
+                              onClick={() => this.removeFav(movie)}
                             >
                               Remove from List
                             </Button>
